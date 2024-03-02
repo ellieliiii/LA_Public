@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/{{prefix}}{{ url_for('static', filename='styles.css') }}">
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <link rel="stylesheet" type="text/css" href="/{{prefix}}{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Thank you for participating in our study.</h2>
+        <p>Please fill in the survey and go to the next section!
+        <br>Reminder: please fill in the survey to get the full compensation.
+        </p>
+        <div class="form-container">
+            <a href="https://redcap.vanderbilt.edu/surveys/?s=J4CDD9HMYM4C3YR4" target="_blank">Go to the Survey</a>
+            <a href="https://cyberpsy1.cumberland.isis.vanderbilt.edu/{{prefix}}/" class="button">Go to the next section</a>            
+        </div>
+    </div>
+</body>
+</html>

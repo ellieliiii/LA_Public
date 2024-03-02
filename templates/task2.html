@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body data-user-id="{{ user_id }}" data-prefix="{{ prefix }}">
+    <div class="container">
+        <h2>Task 2</h2>
+        <script>
+            var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+        </script>
+        <p>Congratulations! You have successfully gained access to the note app.</p>
+            
+        <strong>Scenario:</strong>
+        <ul>
+            <li>Clicking on the link below will open the task in another tab but will also alert the authorities. </li>
+            <li>Your task is to find out the password to online banking login and come back to enter it on this tab within 40 minutes.</li>
+        </ul>
+
+        <strong>Keep in mind:</strong>
+        <ul>
+            <li>After 40 minutes, if you still haven't found the correct information, you will be detected and lose all extra compensation.</li>
+            <li>If completed within 30 minutes, you will be rewarded an extra 10 dollars.</li>
+            <li>If completed in 40 minutes, you will be rewarded an extra 9 dollars.</li>
+            <li>Any answers submitted after 40 minutes will not be admitted.</li>
+        </ul>
+    
+        <strong>Note:</strong>
+        <ul>
+            <li>If you wish to exit the task, you can do so at any time by pressing the Exit button in the right lower corner. Please note that not completing this task will only guarantee a payment of 10 dollars. Good luck!</li>
+        </ul>
+        
+        <a href="/{{prefix}}{{ url_for('home2') }}" target="_blank">Click Here to Access Second Task</a>
+        
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+        
+        <div id="timer"></div>
+    
+
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="password" placeholder="Enter password">
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- New Exit Task button with small-button style -->
+        <a href="/{{prefix + url_for('thankyou') }}" class="small-button">Exit the task</a>
+    </div>
+    <script src="/{{ prefix }}{{ url_for('static', filename='timer.js') }}"></script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</body>
+</html>

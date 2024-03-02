@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task1</title>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <link rel="stylesheet" type="text/css" href="/{{ prefix }}{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    body {
+        background-image: url("background-image.jpg"); 
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Welcome to TodoList!</h1>
+        <p>Some greeting words.</p>
+        <div class="buttons-container">
+            <a href="/{{prefix + '/login'}}"><button>Login</button></a>
+            <a href="/{{prefix + '/register'}}"><button>Register</button></a>
+        </div>
+        <a class="home-button" href="/{{prefix + url_for('task1') }}">
+            <button>Back to Task Page</button>
+        </a>
+    </div>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script></body>
+</html>

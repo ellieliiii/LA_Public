@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <title>Edit Todo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body data-prefix="{{ prefix }}">
+    <h1>Edit Todo</h1>
+    <form method="POST" action="/{{ prefix }}{{ url_for('edit', todo_id=todo.id) }}">
+        <input type="text" name="todo" value="{{ todo.task }}">
+        <button type="submit">Save</button>
+    </form>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</body>
+</html>

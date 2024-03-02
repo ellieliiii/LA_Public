@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task1 - Dashboard</title>
+    <script>
+      var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <ul>
+      {% for todo in todos %}
+        <li>
+          <form method="POST" action="/{{ prefix }}{{ url_for('check', todo_id=todo.id) }}">
+            <input type="checkbox" name="done" {% if todo.done %}checked{% endif %} onchange="this.form.submit()">
+            <span {% if todo.done %}style="text-decoration: line-through"{% endif %}>{{ todo.task }}</span>
+          </form> 
+          <a href="/{{ prefix }}{{ url_for('edit', todo_id=todo.id) }}">edit</a>
+          <a href="/{{ prefix }}{{ url_for('delete', todo_id=todo.id) }}">delete</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <form method="POST" action="/{{ prefix }}{{ url_for('add') }}">
+        <input type="text" name="todo">
+        <button type="submit">Add</button>
+    </form>
+    <a href="/{{ prefix }}{{ url_for('logout') }}">Logout</a>
+    <!-- Home button with CSS class -->
+    <a class="home-button" href="/{{ prefix }}{{ url_for('home') }}">
+      <button>Home</button>
+    </a>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</body>
+</html>

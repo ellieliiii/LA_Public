@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 20px;  /* Add this line to create space between the text and the buttons */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.container p {
+    text-align: left; /* Add this line to left-justify the text */
+    margin-bottom: 5px;
+    text-indent: 20px; /* Add this line to create an indent */
+}
+
+.container ul {
+    text-align: left; /* Add this line to left-justify the text */
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.container .button {
+    padding: 10px 20px;
+    background-color: #cd71b5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.container .button:hover {
+    background-color: #e8a8de;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    margin-top: 20px;
+    height: 25px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 20px;
+    background-color: #e8a8de;
+    width: 0;
+}
+
+/* New small-button style */
+.container .small-button {
+    padding: 5px 10px;
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.container .small-button:hover {
+    background-color: #f3f3f3;
+}
+
+/* New input-container style */
+.input-container {
+    display: flex; /* Display username and password fields side by side */
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    margin-right: 10px; /* Add spacing between username and password fields */
+    
+}
+

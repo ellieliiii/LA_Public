@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank of VB</title>
+    <link rel="stylesheet" type="text/css" href="/{{prefix}}{{ url_for('static', filename='style3.css') }}">
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bank of VB</h1>
+        <nav>
+            <ul>
+                <li><a href="/{{prefix}}/home3">Home</a></li>
+                <li><a href="/{{prefix}}/account_history">Account History</a></li>
+                <li><a href="/{{prefix}}/credit_card">Credit Card Statement</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="/{{prefix}}{{ url_for('static', filename='style2.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Notes</h1>
+    <ul>
+        {% for note in notes %}
+            <li><a href="/{{prefix}}{{ url_for('note_page', note_id=note.id) }}">{{ note.title }}</a></li>
+        {% endfor %}
+    </ul>
+        
+    <a href="/{{prefix}}{{ url_for('new_note') }}">Add a new note</a>
+    <a class="home-button" href="/{{prefix}}{{ url_for('task2') }}">
+        <button>Back to Task Page</button>
+    </a>
+</body>
+</html>

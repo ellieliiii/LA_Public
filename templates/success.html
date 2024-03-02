@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <link rel="stylesheet" href="/{{ prefix }}{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Congratulations! You have completed the study successfully.</h2>
+        <p>Please fill in the survey and go to the next section!
+        <br>reminder: please fill in the survey to get the full compensation.
+        </p>
+        <div class="form-container">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVzcAX4k9Z28pGWNic2FrITINPr8VpVix-XEHRCAHa-GyWhA/viewform?usp=sf_link" class="button">Go to the Survey</a>
+            <a href="http://127.0.0.1:5000" class="button">Go to the next section</a>            
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</body>
+</html>

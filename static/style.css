@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container p {
+    margin-bottom: 20px;
+}
+
+.container .button {
+    padding: 10px 20px;
+    background-color: #cd71b5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Add this line to remove underline */
+    margin-top: 10px; /* Add this line to add space between buttons */
+}
+
+.container .button:hover {
+    background-color: #e8a8de;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    margin-top: 20px;
+    height: 25px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 20px;
+    background-color: #e8a8de;
+    width: 0;
+}

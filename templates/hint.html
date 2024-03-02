@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hint</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</head>
+<body>
+    <h1>Here's a hint</h1>
+    <p>Try playing around with the username and password fields</p>
+</body>
+</html>

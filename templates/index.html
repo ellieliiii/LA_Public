@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study</title>
+    <link rel="stylesheet" href="/{{ prefix }}{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>In this study, you will be presented with 3 tasks.</h1>
+        <p>The first task will appear shortly after you click start. Once you enter each stage, there will be a timer counting down. If you can 
+            finish the first task in 40 minutes, you will be awarded an extra $5. If you can complete it in 30 minutes, then you will be awarded
+             an extra $6. You will be informed of the amount of money awarded for the following levels after you complete the current level. We would
+            appreciate it if you could finish this in one sitting.</p>
+        <div class="form-container">
+            <form action="/{{ prefix }}/" method="POST"> 
+            <!-- <form action="/" method="POST"> -->
+                <div class="input-container">
+                    <input type="text" name="user_id" placeholder="Enter User ID" required>
+                    <input type="text" name="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="button">Start</button>
+            </form>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

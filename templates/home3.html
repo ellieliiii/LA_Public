@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome to Bank of VB!</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+</script>
+<script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+
+<!-- Display search bar -->
+<form action="/{{ prefix }}search" method="post">
+    <input type="text" name="query" placeholder="Search...">
+    <input type="submit" value="Search">
+</form>
+
+{% if search_result %}
+    <div id="search-result" style="display: block;">{{ search_result | safe }}</div>
+{% endif %}
+
+<!-- Display account balance and other bank information -->
+<p>Checking Account: $1034</p>
+<p>Savings Account: $6234</p>
+<a class="home-button" href="/{{prefix}}{{ url_for('task3') }}">
+    <button>Back to Task Page</button>
+</a>
+
+{% endblock %}

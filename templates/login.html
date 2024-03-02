@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/{{ prefix }}{{ url_for('static', filename='login_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1 class="title">Login Page</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.username }}
+                {{ form.password }}
+                {{ form.submit }}
+            </form>
+            <a href="/{{ prefix }}{{ url_for('register') }}">Don't have an account? Sign Up</a>
+            <!-- Home button with CSS class -->
+            <a class="home-button" href="/{{ prefix }}{{ url_for('home') }}">
+                <button>Home</button>
+            </a>
+            <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+        </div>
+        <div class="lists">
+            <h2>Most Popular Time Management Tactics:</h2>
+            <ul>
+                <li><a href="https://www.investopedia.com/terms/p/pareto-analysis.asp#:~:text=Pareto%20analysis%20is%20premised%20on,quality%20and%20decision%2Dmaking%20tool."target="_blank">Pareto Analysis</a></li>
+                <li><a href="https://www.techtarget.com/whatis/definition/pomodoro-technique#:~:text=What%20is%20the%20Pomodoro%20Technique,after%20four%20consecutive%20work%20intervals."target="_blank">Pomodoro Technique</a></li>
+                <li><a href="https://www.eisenhower.me/eisenhower-matrix/#:~:text=What%20is%20the%20Eisenhower%20Matrix,or%20not%20do%20at%20all."target="_blank">Eisenhower Matrix</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Parkinson%27s_law"target="_blank">Parkinson's Law</a></li>
+                <li><a href="https://todoist.com/productivity-methods/time-blocking"target="_blank">Time Blocking Method</a></li>
+                <li><a href="https://todoist.com/productivity-methods/getting-things-done"target="_blank">Getting Things Done (GTD) Method</a></li>
+                <li><a href="https://www.tonyrobbins.com/pdfs/Workbook-Time-of-your-Life.pdf"target="_blank">Rapid Planning Method (RPM)</a></li>
+                <li><a href="https://www.linkedin.com/pulse/time-management-pickle-jar-theory-shadav-mohammad-ansari#:~:text=The%20Pickle%20Jar%20theory%20is%20basically%20based%20on%20the%20idea,less%20important%20and%20unimportant%20activities."target="_blank">Pickle Jar Theory</a></li>
+            </ul>
+            <h2>Popular Travel Bucket List:</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Paris"target="_blank">Visit Paris, France</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Great_Wall_of_China"target="_blank">Explore the Great Wall of China</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Maldives"target="_blank">Relax in the Maldives</a></li>
+                <li><a href="https://capturetheatlas.com/see-the-northern-lights-in-norway/#:~:text=The%20best%20months%20to%20see,is%20higher%20during%20that%20period."target="_blank">Experience the Northern Lights in Norway</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Machu_Picchu"target="_blank">Hike to Machu Picchu, Peru</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Taj_Mahal"target="_blank">Admire the Taj Mahal, India</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Safari"target="_blank">Go on an African Safari</a></li>
+                <li><a href="https://www.cntraveller.com/gallery/best-greek-islands-beaches"target="_blank">Cruise the Greek Islands</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Continue Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Congratulations! You entered the correct password.</h2>
+        <p>Your compensation has been increased. You now have the choice to either continue or quit.</p>
+        
+        <strong>For the next task:</strong>
+        <ul>
+            <li>If you complete it within 30 minutes, you will be rewarded an extra $20.</li>
+            <li>If you complete it within 40 minutes, you will be rewarded an extra $19.</li>
+            <li>If you choose to continue and fail to complete the next task within 40 minutes, all extra compensation earned from tasks 1 and 2 will be taken away.</li>
+        </ul>
+        
+        <div class="form-container">
+            <a href="/{{prefix}}/survey_continue1" class="button">Continue Survey</a>
+            <a href="/{{prefix}}/survey_quit" class="button">Quit Survey</a>            
+        </div>
+    </div>
+
+</html>

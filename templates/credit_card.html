@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Credit Card Statement</h2>
+<ul>
+    {% for transaction in transactions %}
+        <li>
+            <span>Date: {{ transaction.date }}</span><br>
+            <span>Description: {{ transaction.description }}</span><br>
+            <span>Amount: ${{ transaction.amount }}</span><br>
+        </li>
+    {% endfor %}
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+</script>
+<script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+{% endblock %}

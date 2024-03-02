@@ -1,0 +1,14 @@
+<!-- survey_continue1.html -->
+<div class="container">
+    <h1>Before you enter the next task, we have a quick question.</h1>
+    <p>What is the minimum monetary amount of reward you would've been willing to take the risk for? By risk we refer to the possibility of losing your previous rewards.</p>
+    <form method="POST" action="/{{prefix}}survey_continue1?user_id={{ user_id }}">
+        <input type="text" name="amount" placeholder="Enter the amount" required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number">
+        <button type="submit">Submit</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Make sure you pass 'prefix' from your Flask view
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</div>

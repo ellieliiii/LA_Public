@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body data-prefix="{{ prefix }}">
+    <h1>Register Page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+
+    <a href="/{{ prefix }}{{ url_for('login') }}">Already have an account? Log In</a>
+    <!-- Home button with CSS class -->
+    <a class="home-button" href="/{{ prefix }}{{ url_for('home') }}">
+        <button>Home</button>
+    </a>
+    <script src="/{{ prefix }}{{ url_for('static', filename='timer.js') }}"></script>
+    <script>
+        var prefix = "{{ prefix }}"; // Add this line to declare the prefix variable
+    </script>
+    <script src="/{{ prefix }}{{ url_for('static', filename='log_events.js') }}"></script>
+</body>
+</html>
